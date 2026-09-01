@@ -53,7 +53,7 @@ The goal is to make computing resources available in a similar utility-like mann
 
 > Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources that can be rapidly provisioned and released with minimal management effort or service-provider interaction.
 
-The important words are:
+### Important terms
 
 - **On-demand** — obtain resources when needed
 - **Network access** — resources are accessed over a network
@@ -104,87 +104,121 @@ More control     Less control
 More management  Less management
 ```
 
+---
+
 ## IaaS — Infrastructure as a Service
 
-You obtain fundamental computing infrastructure such as:
+IaaS provides fundamental computing resources such as:
 
 - Compute
 - Storage
 - Networking
 - Virtual machines
 
-You have significant control over the operating system, software and applications.
+You can deploy and run your own software, including operating systems and applications.
 
-**Think:** *"Give me a machine; I will manage the software."*
+![IaaS Architecture](images/iaas.png)
 
-### You manage
-- OS
-- Runtime/software
-- Applications
-- Configuration
+### What does the user control?
 
-### Provider manages
-- Physical servers
-- Physical storage
-- Physical networking
-- Underlying infrastructure
+```text
+User
+├── Operating System
+├── Software
+└── Applications
 
-**Example from the lecture:** Amazon AWS / virtual machines.
+Cloud Provider
+└── Hardware / Physical Infrastructure
+```
+
+The provider allocates the virtual resources, while the user manages those resources and the software running on them.
+
+**Think:** *"Give me the infrastructure; I will manage the software."*
+
+---
+
+## What do developers really want?
+
+Suppose we are developing **BookKarts** and need:
+
+- A database
+- An application server
+
+With IaaS, the developer needs to install and configure these components.
+
+![What developers want — IaaS vs PaaS](images/paas-motivation.png)
+
+With **PaaS**, these platform components can be provided as part of the offering, allowing the developer to focus more on the application.
 
 ---
 
 ## PaaS — Platform as a Service
 
-The provider gives you a platform on which you can deploy your application.
+PaaS allows developers to deploy applications onto a cloud platform using programming languages and tools supported by the provider.
 
-You do not need to manage as much of the underlying system.
+![PaaS Architecture](images/paas.png)
 
-**Think:** *"Give me a platform; I will build and deploy my application."*
+### The idea
 
-### You mainly manage
-- Application
-- Application data
-- Your code
+```text
+User
+└── Application
 
-### Provider manages more of
-- Infrastructure
-- OS
-- Runtime/platform
+Cloud Provider
+├── Platform / Middleware
+├── Virtualization
+└── Hardware
+```
 
-**Examples from the lecture:** Windows Azure, Docker.
+The provider manages the underlying infrastructure and platform, while the developer focuses primarily on the application.
+
+**Think:** *"Give me a platform; I will build my application."*
 
 ---
 
 ## SaaS — Software as a Service
 
-The provider runs the application and you simply use it.
+SaaS allows users to use applications provided and operated by the cloud provider.
+
+The application is accessed through client devices, commonly using a web browser.
+
+![SaaS Architecture](images/saas.png)
+
+### The idea
+
+```text
+User
+└── Uses the application
+
+Cloud Provider
+├── Application
+├── Middleware
+├── OS
+├── Virtualization
+└── Hardware
+```
 
 **Think:** *"I just want to use the software."*
 
-You generally access it through a client such as a web browser.
-
-**Example from the lecture:** Salesforce.
-
 ---
 
-## 7. IaaS vs PaaS vs SaaS
+# 7. IaaS vs PaaS vs SaaS
 
 | | IaaS | PaaS | SaaS |
 |---|---|---|---|
-| Main idea | Rent infrastructure | Rent a platform | Use software |
+| Main idea | Rent infrastructure | Use a development platform | Use software |
 | Control | High | Medium | Low |
-| You manage | OS + software + application | Application | Mostly just usage/configuration |
-| Best suited for | Users needing infrastructure control | Developers | End users |
+| User focuses on | OS, software, applications | Applications | Using the application |
+| Provider manages | Hardware/infrastructure | Infrastructure + platform | Almost everything |
+| Best suited for | Users needing infrastructure control | Application developers | End users |
 
 ### Easy memory trick
 
-**IaaS:** *Infrastructure*  
-**PaaS:** *Platform*  
-**SaaS:** *Software*
+**IaaS:** Infrastructure  
+**PaaS:** Platform  
+**SaaS:** Software
 
-Or:
-
-> **IaaS = I manage the machine**  
+> **IaaS = I manage the machine/software**  
 > **PaaS = I manage my application**  
 > **SaaS = I use the application**
 
@@ -210,9 +244,10 @@ The course introduces technologies and challenges such as:
 # 9. Exam Quick Revision
 
 ### Cloud Computing
-On-demand access to a shared pool of configurable computing resources.
+On-demand access to a shared pool of configurable computing resources over a network.
 
 ### Five characteristics
+
 1. On-demand self-service
 2. Broad network access
 3. Resource pooling
@@ -220,22 +255,23 @@ On-demand access to a shared pool of configurable computing resources.
 5. Measured service
 
 ### Service models
-- **IaaS** → Infrastructure
-- **PaaS** → Platform
-- **SaaS** → Software
 
-### Main relationship
+- **IaaS → Infrastructure**
+- **PaaS → Platform**
+- **SaaS → Software**
+
+### Control
 
 ```text
-             More control
-                  ↑
-                IaaS
-                  ↓
-                PaaS
-                  ↓
-                SaaS
-                  ↓
-             Less control
+More control
+     ↑
+    IaaS
+     ↓
+    PaaS
+     ↓
+    SaaS
+     ↓
+Less control
 ```
 
 ### Main motivation
@@ -254,5 +290,4 @@ Cloud Computing
 Big Data / AI applications
 ```
 
-**Key idea to remember:**  
-> Cloud computing abstracts away physical infrastructure and makes computing resources scalable, accessible and available on demand.
+> **Key idea:** Cloud computing abstracts physical infrastructure and makes computing resources available over a network in a scalable, on-demand manner.
