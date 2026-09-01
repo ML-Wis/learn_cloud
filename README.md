@@ -7,6 +7,6 @@ Concise lecture notes for the Cloud Computing course.
 | Lecture | Topic |
 |---|---|
 | [Lecture 1](lecture1.md) | Introduction to Cloud Computing |
-| [Lecture 2](lecture2.md) | Technology Challenges |
+| [Lecture 2](Lecture2.md) | Technology Challenges |
 ---
 
