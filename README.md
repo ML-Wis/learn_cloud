@@ -10,5 +10,6 @@ Concise lecture notes for the Cloud Computing course.
 | [Lecture 2](Lecture2.md) | Technology Challenges |
 | [Lecture 3](Lecture3.md) | Laas Programming model|
 | [Lecture 4](Lecture4.md) | Paas Programming model|
+| [Lecture 5](Lecture5.md) | REST |
 ---
 
